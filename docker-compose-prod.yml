@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  frontend:
+    build:
+      context: https://github.com/robinferm/JobsInSweden-FE.git#main
+      dockerfile: ./Dockerfile.prod
+
+  backend:
+    build:
+      context: https://github.com/robinferm/JobsInSweden-BE.git#main
+      dockerfile: ./JIS-BE/Dockerfile
+  
+  mongo:
+    image: mongo:4.4.11-rc0-focal # For linux
+    volumes:
+      - ../mongodb/database:/data/db

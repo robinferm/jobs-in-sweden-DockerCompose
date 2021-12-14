@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  frontend:
+    build:
+      context: ../JIS-FE
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ../JIS-FE/src:/app/src
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Needed for windows
+
+  backend:
+    build:
+      context: ../JIS-BE
+      dockerfile: JIS-BE/Dockerfile
+
+  mongo:
+    image: mongo:latest # For windows
+    volumes:
+      - ../../JIS_Testdb\database:/data/db
