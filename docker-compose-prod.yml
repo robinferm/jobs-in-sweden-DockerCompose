@@ -3,12 +3,12 @@ version: '3.4'
 services:
   frontend:
     build:
-      context: https://github.com/robinferm/JobsInSweden-FE.git#main
+      context: https://github.com/robinferm/jobs-in-sweden-FE.git#main
       dockerfile: ./Dockerfile.prod
 
   backend:
     build:
-      context: https://github.com/robinferm/JobsInSweden-BE.git#main
+      context: https://github.com/robinferm/jobs-in-sweden-BE.git#main
       dockerfile: ./JIS-BE/Dockerfile
   
   mongo:
