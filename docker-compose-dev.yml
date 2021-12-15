@@ -3,16 +3,16 @@ version: '3.4'
 services:
   frontend:
     build:
-      context: ../JIS-FE
+      context: ../jobs-in-sweden-FE
       dockerfile: Dockerfile.dev
     volumes:
-      - ../JIS-FE/src:/app/src
+      - ../jobs-in-sweden-FE/src:/app/src
     environment:
       - CHOKIDAR_USEPOLLING=true # Needed for windows
 
   backend:
     build:
-      context: ../JIS-BE
+      context: ../jobs-in-sweden-BE
       dockerfile: JIS-BE/Dockerfile
 
   mongo:
